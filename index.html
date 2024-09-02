@@ -28,6 +28,32 @@
       <tbody>
       </tbody>
     </table>
+    
+    <script type="module">
+      import { ambilDaftarsiswa } from 'main.js';
+      
+      $(document).ready(async function() {
+        let elemenDaftarSiswa = $("#daftar-siswa > tbody");
+        let daftarsiswa = await ambilDaftarsiswa();
+          
+        
+        
+        daftarsiswa.forEach((data) => {
+          elemenDaftarSiswa.append(
+            "<tr>" +
+            "<td>" + "</td>" +
+            "<td>" + data.nama + "</td>" +
+            "<td>" + data.alamat +"</td>" +
+            "<td>" + "</td>" +
+            "</tr>"
+            )
+            
+        })
+      })
+      
+    </script>
+    
+    
   </body>
 
 </html>
