@@ -26,24 +26,26 @@
         </tr>
       </thead>
       <tbody>
+        
+        <a href="formulirtambah.html">Tambah Siswa</a>
       
     
     
     <script type="module">
-      import { ambilDaftarsiswa } from './main.js';
+      import { ambilDaftarSiswa } from './main.js';
       
       $(document).ready(async function() {
         let elemenDaftarSiswa = $("#daftar-siswa > tbody");
-        let daftarsiswa = await ambilDaftarsiswa();
+        let daftarSiswa = await ambilDaftarSiswa();
           
         
         
-        daftarsiswa.forEach((data) => {
+        daftarSiswa.forEach((data) => {
           elemenDaftarSiswa.append(
             "<tr>" +
             "<td>" + "</td>" +
-            "<td>" + data.nama + "</td>" +
-            "<td>" + data.alamat +"</td>" +
+            "<td>" + data.Nama + "</td>" +
+            "<td>" + data.Alamat +"</td>" +
             "<td>" + "</td>" +
             "</tr>"
             )
