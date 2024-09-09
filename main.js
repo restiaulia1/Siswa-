@@ -57,5 +57,5 @@ export async function tambahSiswa(nama,alamat) {
      // menampilkan pesan gagal
      Console.log("gagal menyimpan data siswa")
   
-  }
+  } 
 }

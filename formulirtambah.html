@@ -33,20 +33,20 @@
   <script type="module">
     import { tambahSiswa } from "./main.js";
     
-    $(document).ready(async function() 
+    $(document).ready(async function() {
       // ketika tombol tambah di pencet 
-      $("#tombolsimpan").click(async function(event){
+      $('#tombolsimpan').click(async function(event){
          event.preventDefault()
          
          // ambil data dari formulir
-      let nama = $("#inputnama").val()
-      let alamat = $("#inputalamat").val()
+      let nama = $('#inputnama').val()
+      let alamat = $('#inputalamat').val()
          
          
         await tambahSiswa(nama, alamat)
         window.location .href = "index.html"
-      }
-    })
+      });
+    });
   </script>
   
 </body>
