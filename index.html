@@ -26,6 +26,7 @@
         </tr>
       </thead>
       <tbody>
+      </tbody>
         
         <a href="formulirtambah.html">Tambah Siswa</a>
       
@@ -40,28 +41,32 @@
           
         
         
-        daftarSiswa.forEach((data) => {
-          elemenDaftarSiswa.append(
-            "<tr>" +
-            "<td>" + "</td>" +
-            "<td>" + data.Nama + "</td>" +
-            "<td>" + data.Alamat +"</td>" +
-            "<td>" + "<button class='btn btn-danger tombol-hapus' data='" +data.id + "'>hapus</button>" + "</td>" +
-      
-            "</tr>"
-            )
-            
-        })
-        $('.tombol-hapus').click(async function() {
-          await hapusSiswa($(this).attr('data'))
-          location.reload()
-        })
-        
+daftarSiswa.forEach((data) => {
+        elemenDaftarSiswa.append(
+          "<tr>" +
+          "<td>" + "</td>" +
+          "<td>" + data.Nama + "</td>" +
+          "<td>" + data.Alamat + "</td>" +
+          "<td>" + "<a href='#' class='me-2 link-ubah' data='" +data.id + "'>ubah</a><button class='btn btn-danger tombol-hapus' data='"+data.id + "'>hapus</button> " + "</td>" +
+          "</tr>"
+          )
       })
+      
+      $('.tombol-hapus').click(async function() {
+        await hapusSiswa($(this).attr('data'))
+        location.reload()
+    })
+    
+$('.link-ubah').click(async function() {
+      location.replace('formulirubah.html?id=' + $(this).attr('data'))
+      
+    })
+    
+    })
      
       
     </script>
-      </tbody>
+     
     
     </table>
   </body>
