@@ -43,19 +43,23 @@ export async function ambilDaftarSiswa() {
   return hasilkueri;
 }
 
-export async function tambahSiswa(nama,alamat) {
+export async function tambahSiswa(Nama,Alamat) {
   try {
     // menyimpan data ke firebase
     const refDoKumen = await addDoc(collection(basisdata, "Siswa"),{
-      nama: nama,
-      alamat: alamat 
+      Nama: Nama,
+      Alamat: Alamat 
     })
     
     //menampilkan pesan berhasil 
-    Console.log("berhasil menyimpan data siswa")
+    console.log("berhasil menyimpan data siswa")
   } catch (error) {
      // menampilkan pesan gagal
-     Console.log("gagal menyimpan data siswa")
+     console.log("gagal menyimpan data siswa")
   
   } 
+}
+
+export async function hapusSiswa(id) {
+  await deleteDoc(doc(basisdata, "Siswa", id))
 }
